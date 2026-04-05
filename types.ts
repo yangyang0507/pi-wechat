@@ -122,3 +122,12 @@ export interface IncomingMessage {
   contextToken: string
   timestamp: Date
 }
+
+export interface QueuedWechatRequest {
+  id: string
+  userId: string
+  messageId: string
+  receivedAt: Date
+  text: string
+  preview: string
+}

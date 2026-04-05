@@ -6,3 +6,4 @@ coverage/
 .env
 .env.*
 !.env.example
+.pi/agent/APPEND_SYSTEM.md

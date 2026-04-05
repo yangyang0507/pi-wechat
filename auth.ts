@@ -4,8 +4,8 @@ import * as path from 'node:path'
 import { DEFAULT_BASE_URL, fetchQrCode, getQrCodeStatus } from './api.js'
 import type { Credentials } from './types.js'
 
-const CREDS_DIR = path.join(os.homedir(), '.pi-wechat')
-const CREDS_FILE = path.join(CREDS_DIR, 'credentials.json')
+const CONFIG_DIR = path.join(os.homedir(), '.pi-wechat')
+const CREDS_FILE = path.join(CONFIG_DIR, 'credentials.json')
 
 export function getCredentialsPath(): string {
   return CREDS_FILE
@@ -20,7 +20,7 @@ export function loadCredentials(): Credentials | null {
 }
 
 export function saveCredentials(creds: Credentials): void {
-  fs.mkdirSync(CREDS_DIR, { recursive: true })
+  fs.mkdirSync(CONFIG_DIR, { recursive: true })
   fs.writeFileSync(
     CREDS_FILE,
     JSON.stringify(
